@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "template_python"
+dynamic = ["version"]
+description = "A new Python project."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    # Add your project dependencies here
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.dynamic]
+version = {attr = "template_python.__version__"}
