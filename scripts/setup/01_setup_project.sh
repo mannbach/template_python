@@ -120,7 +120,22 @@ EOL
 
 # Create config/.env
 echo "Creating 'config/.env'."
-cp config/sample.env config/.env
+cat <<EOL > config/.env
+# Environment variables for template_python
+PROJECT_NAME="$PROJECT_NAME"
+PYTHON_VERSION="$PYTHON_VERSION"
+
+# Application
+PATH_CONTAINER_OUTPUT="/mnt/output/"
+PATH_CONTAINER_DATA="/mnt/data/"
+
+# Docker
+## Path to where source data is located; can be absolute
+PATH_HOST_DATA="./data/"
+PATH_HOST_OUTPUT="./output/"
+PATH_THIS_CONFIG="./config/sample.env"
+EOL
+cp config/.env config/sample.env
 
 # Create a Python test that loads the package
 echo "Creating 'tests/test_load_package.py'."

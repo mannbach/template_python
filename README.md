@@ -2,7 +2,7 @@
 To use this template, execute the scripts provided in the 'scripts/setup' folder in the order they are numbered (see [Setup](#setup)).
 This will create a new Python project with a custom name and Python version.
 The result will be identical to the structure of this project (see [Content](#content) for a detailed description).
-Every  to the remote repository will trigger a linting (all code) and testing process (code in ).
+Every `git push` to the remote repository will trigger a linting (all code) and testing process (code in `tests/`).
 
 ## Setup
 Run the following scripts:
