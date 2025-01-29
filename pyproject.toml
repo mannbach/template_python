@@ -13,7 +13,7 @@ dependencies = [
 ]
 
 [tool.setuptools.packages.find]
-where = ["src"]
+where = ["template_python"]
 
 [tool.setuptools.dynamic]
-version = {attr = "template_python.__version__"}
+version = {attr = "__version__"}

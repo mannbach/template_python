@@ -10,12 +10,12 @@ PROJECT_NAME=$1
 PYTHON_VERSION=$2
 
 # Create project directory
-mkdir -p ../../src
+mkdir -p ../../$PROJECT_NAME
 
 # Create __init__.py and add version
-echo "Creating source code folder and '../../src/__init__.py'."
-touch ../../src/__init__.py
-echo "__version__ = '0.1'" > ../../src/__init__.py
+echo "Creating source code folder and '../../$PROJECT_NAME/__init__.py'."
+touch ../../$PROJECT_NAME/__init__.py
+echo "__version__ = '0.1'" > ../../$PROJECT_NAME/__init__.py
 
 # Create README.md
 echo "Creating 'README.me'."
@@ -53,10 +53,10 @@ dependencies = [
 ]
 
 [tool.setuptools.packages.find]
-where = ["src"]
+where = ["$PROJECT_NAME"]
 
 [tool.setuptools.dynamic]
-version = {attr = "$PROJECT_NAME.__version__"}
+version = {attr = "__version__"}
 EOL
 
 # Create Dockerfile
