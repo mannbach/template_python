@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools"]
+requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -13,7 +13,7 @@ dependencies = [
 ]
 
 [tool.setuptools.packages.find]
-where = ["template_python"]
+where = ["."]
 
 [tool.setuptools.dynamic]
-version = {attr = "__version__"}
+version = {attr = "template_python.__version__"}

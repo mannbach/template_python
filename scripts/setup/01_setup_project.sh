@@ -39,7 +39,7 @@ EOL
 echo "Creating 'pyproject.toml'."
 cat <<EOL > pyproject.toml
 [build-system]
-requires = ["setuptools"]
+requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -53,10 +53,10 @@ dependencies = [
 ]
 
 [tool.setuptools.packages.find]
-where = ["$PROJECT_NAME"]
+where = ["."]
 
 [tool.setuptools.dynamic]
-version = {attr = "__version__"}
+version = {attr = "$PROJECT_NAME.__version__"}
 EOL
 
 # Create Dockerfile
