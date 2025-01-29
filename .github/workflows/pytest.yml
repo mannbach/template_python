@@ -16,10 +16,10 @@ jobs:
 
     - name: Installing pytest
       run: |
-        scripts/docker_exec pip install pytest
+        scripts/setup/docker_exec.sh pip install pytest
 
     - name: Testing the code
       run: |
-        scripts/docker_exec pytest tests
+        scripts/setup/docker_exec.sh pytest tests
 
     - uses: ./.github/actions/docker_down
