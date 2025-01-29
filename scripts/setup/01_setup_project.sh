@@ -12,6 +12,11 @@ PYTHON_VERSION=$2
 # Create project directory
 mkdir -p $PROJECT_NAME
 
+# Remove source folder if it exists
+if [ -d "template_python" ]; then
+    rm -rf "template_python"
+fi
+
 # Create __init__.py and add version
 echo "Creating source code folder and '$PROJECT_NAME/__init__.py'."
 cat <<EOL > $PROJECT_NAME/__init__.py
