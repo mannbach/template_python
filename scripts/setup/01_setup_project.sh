@@ -10,16 +10,16 @@ PROJECT_NAME=$1
 PYTHON_VERSION=$2
 
 # Create project directory
-mkdir -p ../../$PROJECT_NAME
+mkdir -p $PROJECT_NAME
 
 # Create __init__.py and add version
-echo "Creating source code folder and '../../$PROJECT_NAME/__init__.py'."
-touch ../../$PROJECT_NAME/__init__.py
-echo "__version__ = '0.1'" > ../../$PROJECT_NAME/__init__.py
+echo "Creating source code folder and '$PROJECT_NAME/__init__.py'."
+touch $PROJECT_NAME/__init__.py
+echo "__version__ = '0.1'" > $PROJECT_NAME/__init__.py
 
 # Create README.md
 echo "Creating 'README.me'."
-cat <<EOL > ../../README.md
+cat <<EOL > README.md
 # $PROJECT_NAME
 
 ## Description
@@ -37,7 +37,7 @@ EOL
 
 # Create pyproject.toml
 echo "Creating 'pyproject.toml'."
-cat <<EOL > ../../pyproject.toml
+cat <<EOL > pyproject.toml
 [build-system]
 requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
@@ -61,7 +61,7 @@ EOL
 
 # Create Dockerfile
 echo "Creating 'Dockerfile'."
-cat <<EOL > ../../Dockerfile
+cat <<EOL > Dockerfile
 FROM python:$PYTHON_VERSION
 
 WORKDIR /$PROJECT_NAME
@@ -80,7 +80,7 @@ EOL
 
 # Create docker-compose.yml
 echo "Creating 'docker-compose.yml'."
-cat <<EOL > ../../docker-compose.yml
+cat <<EOL > docker-compose.yml
 services:
   $PROJECT_NAME:
     build: .
@@ -95,11 +95,11 @@ EOL
 
 # Create config/.env
 echo "Creating 'config/.env'."
-cp ../../config/sample.env ../../config/.env
+cp config/sample.env config/.env
 
 # Create a Python test that loads the package
-echo "Creating 'tests/load_package.py'."
-cat <<EOL > ../../tests/load_package.py
+echo "Creating 'tests/test_load_package.py'."
+cat <<EOL > tests/test_load_package.py
 import $PROJECT_NAME
 
 def test_load_package():
