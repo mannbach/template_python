@@ -14,10 +14,6 @@ jobs:
 
     - uses: ./.github/actions/docker_up
 
-    - name: Installing pytest
-      run: |
-        scripts/setup/docker_exec.sh pip install pytest
-
     - name: Testing the code
       run: |
         scripts/setup/docker_exec.sh pytest tests

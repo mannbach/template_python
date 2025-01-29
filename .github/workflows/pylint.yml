@@ -14,10 +14,6 @@ jobs:
 
     - uses: ./.github/actions/docker_up
 
-    - name: Installing pylint
-      run: |
-        scripts/setup/docker_exec.sh pip install pylint
-
     - name: Analyzing the code with pylint
       run: |
         scripts/setup/docker_exec.sh pylint $(git ls-files '*.py') --fail-under 9.5
