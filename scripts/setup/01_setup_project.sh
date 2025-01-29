@@ -100,9 +100,13 @@ cp config/sample.env config/.env
 # Create a Python test that loads the package
 echo "Creating 'tests/test_load_package.py'."
 cat <<EOL > tests/test_load_package.py
+"""Tests for checking build.
+"""
 import $PROJECT_NAME
 
 def test_load_package():
+    """Test whether import of package is successful.
+    """
     assert $PROJECT_NAME
 EOL
 

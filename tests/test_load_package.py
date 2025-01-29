@@ -1,3 +1,5 @@
+"""Tests for checking build.
+"""
 import template_python
 
 def test_load_package():
