@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Default .env file path
-ENV_FILE="../../config/.env"
+ENV_FILE="config/.env"
 
 # Check if the first argument is --env-file
 if [[ "$1" == "--env-file" ]]; then

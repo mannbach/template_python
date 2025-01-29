@@ -6,8 +6,8 @@ if [ "$#" -eq 1 ]; then
     echo "Sourcing environment file: $1"
     ENV_FILE=$1
 else
-    echo "Sourcing environment file: ../../config/.env"
-    ENV_FILE="../../config/.env"
+    echo "Sourcing environment file: config/.env"
+    ENV_FILE="config/.env"
 fi
 
 # Build Docker image

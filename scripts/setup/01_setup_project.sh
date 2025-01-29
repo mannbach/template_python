@@ -10,16 +10,16 @@ PROJECT_NAME=$1
 PYTHON_VERSION=$2
 
 # Create project directory
-mkdir -p ../../src
+mkdir -p src
 
 # Create __init__.py and add version
 echo "Creating source code folder and 'src/__init__.py'."
-touch ../../src/__init__.py
-echo "__version__ = '0.1'" > ../../src/__init__.py
+touch src/__init__.py
+echo "__version__ = '0.1'" > src/__init__.py
 
 # Create README.md
 echo "Creating 'README.me'."
-cat <<EOL > ../../README.md
+cat <<EOL > README.md
 # $PROJECT_NAME
 
 ## Description
@@ -37,7 +37,7 @@ EOL
 
 # Create setup.py
 echo "Creating 'setup.py'."
-cat <<EOL > ../../setup.py
+cat <<EOL > setup.py
 from setuptools import setup, find_packages
 
 setup(
@@ -50,7 +50,7 @@ EOL
 
 # Create Dockerfile
 echo "Creating 'Dockerfile'."
-cat <<EOL > ../../Dockerfile
+cat <<EOL > Dockerfile
 FROM python:$PYTHON_VERSION
 
 WORKDIR /$PROJECT_NAME
@@ -69,7 +69,7 @@ EOL
 
 # Create docker-compose.yml
 echo "Creating 'docker-compose.yml'."
-cat <<EOL > ../../docker-compose.yml
+cat <<EOL > docker-compose.yml
 version: '3.8'
 
 services:
@@ -86,7 +86,7 @@ EOL
 
 # Create config/project_name.env
 echo "Creating 'config/.env'."
-cat <<EOL > ../../config/.env
+cat <<EOL > config/.env
 # Environment variables for $PROJECT_NAME
 PROJECT_NAME="$PROJECT_NAME"
 PYTHON_VERSION="$PYTHON_VERSION"
@@ -104,7 +104,7 @@ EOL
 
 # Create a Python test that loads the package
 echo "Creating 'tests/load_package.py'."
-cat <<EOL > ../../tests/load_package.py
+cat <<EOL > tests/load_package.py
 import $PROJECT_NAME
 import pytest
 
