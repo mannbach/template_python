@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  template_python:
+    build: .
+    container_name: template_python
+    env_file:
+      - 'config/template_python.env'
+    volumes:
+      - .:/template_python
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t

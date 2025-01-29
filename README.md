@@ -1,2 +1,13 @@
 # template_python
-Template for a Python project with Docker and GitHub actions.
+
+## Description
+A new Python project.
+
+## Setup
+Instructions to set up the project.
+
+## Usage
+Instructions to use the project.
+
+## Content
+Description of files and folders.
