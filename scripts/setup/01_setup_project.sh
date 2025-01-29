@@ -35,17 +35,32 @@ Instructions to use the project.
 Description of files and folders.
 EOL
 
-# Create setup.py
-echo "Creating 'setup.py'."
-cat <<EOL > setup.py
-from setuptools import setup, find_packages
+# Create pyproject.toml
+echo "Creating 'pyproject.toml'."
+cat <<EOL > pyproject.toml
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
 
-setup(
-    name='$PROJECT_NAME',
-    version='0.1',
-    packages=find_packages(where='src'),
-    package_dir={'': 'src'},
-)
+[project]
+name = "$PROJECT_NAME"
+dynamic = ["version"]
+description = "A new Python project."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    # Add your project dependencies here
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.dynamic]
+version = {attr = "$PROJECT_NAME.__version__"}
+
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
 EOL
 
 # Create Dockerfile
