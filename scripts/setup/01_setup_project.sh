@@ -77,29 +77,16 @@ services:
     build: .
     container_name: $PROJECT_NAME
     env_file:
-      - 'config/$PROJECT_NAME.env'
+      - 'config/.env'
     volumes:
       - .:/$PROJECT_NAME
     stdin_open: true # docker run -i
     tty: true        # docker run -t
 EOL
 
-# Create config/project_name.env
+# Create config/.env
 echo "Creating 'config/.env'."
-cat <<EOL > config/.env
-# Environment variables for $PROJECT_NAME
-PROJECT_NAME="$PROJECT_NAME"
-PYTHON_VERSION="$PYTHON_VERSION"
-
-# Application
-PATH_CONTAINER_OUTPUT="/mnt/output/"
-PATH_CONTAINER_DATA="/mnt/data/"
-
-# Docker
-## Path to where source data is located; can be absolute
-PATH_HOST_DATA="./data/"
-PATH_HOST_OUTPUT="./output/"
-PATH_THIS_CONFIG="./config/$PROJECT_NAME.env"
+cp config/sample.env config/.env
 EOL
 
 # Create a Python test that loads the package
