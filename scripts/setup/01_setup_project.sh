@@ -14,8 +14,12 @@ mkdir -p $PROJECT_NAME
 
 # Create __init__.py and add version
 echo "Creating source code folder and '$PROJECT_NAME/__init__.py'."
-touch $PROJECT_NAME/__init__.py
-echo "__version__ = '0.0.1'" > $PROJECT_NAME/__init__.py
+cat <<EOL > $PROJECT_NAME/__init__.py
+"""$PROJECT_NAME
+"""
+
+__version__ = '0.0.1'
+EOL
 
 # Create README.md
 echo "Creating 'README.me'."
