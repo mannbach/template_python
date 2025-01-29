@@ -3,9 +3,9 @@ name: Build and run docker image
 runs:
   using: "composite"
   steps:
-    - name: Building sample container
+    - name: Building container
       shell: bash -l {0}
       run: scripts/setup/02_build_docker.sh
-    - name: Starting sample container
+    - name: Starting container
       shell: bash -l {0}
       run: scripts/setup/03_run_docker.sh

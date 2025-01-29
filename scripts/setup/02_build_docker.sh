@@ -12,4 +12,4 @@ fi
 
 # Build Docker image
 echo "Building Docker image."
-docker-compose --env-file $ENV_FILE build
+docker compose --env-file $ENV_FILE build
