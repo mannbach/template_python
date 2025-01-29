@@ -3,7 +3,7 @@ services:
     build: .
     container_name: template_python
     env_file:
-      - 'config/template_python.env'
+      - 'config/.env'
     volumes:
       - .:/template_python
     stdin_open: true # docker run -i
