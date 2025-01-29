@@ -72,7 +72,7 @@ name = "$PROJECT_NAME"
 dynamic = ["version"]
 description = "A new Python project."
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=$PYTHON_VERSION"
 dependencies = [
     # Add your project dependencies here
 ]
